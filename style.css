@@ -1,0 +1,189 @@
+:root {
+    --color-primary: #0D0D0D;
+    --color-secondary: #F2E088;
+    --color-text: #A69A60;
+    --color-white: #FFFFFF;
+    --border-radius: 8px;
+    /* Variable para bordes redondeados */
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Variable para sombras */
+    --transition: all 0.3s ease;
+    /* Variable para transiciones */
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Fuente moderna */
+    color: var(--color-text);
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    max-width: 800px;
+    /* Limita el ancho máximo */
+}
+
+/* Header Styles */
+.header-banner {
+    flex: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.main-title {
+    font-size: 3rem;
+    font-family: "Anton", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+    color: var(--color-white);
+    margin-bottom: 20px;
+}
+
+.header-banner img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* Form Styles */
+.input-section {
+    flex: 60%;
+    background-color: var(--color-secondary);
+    border-radius: 32px 32px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    width: 100%;
+    gap: 20px;
+    /* Espaciado entre elementos */
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-align: center;
+}
+
+.input-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+}
+
+.input-name {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.input-name:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 5px rgba(50, 152, 156, 0.5);
+}
+
+/* Button Styles */
+
+button {
+    background: linear-gradient(0deg, rgb(0, 89, 105) 0%, rgb(0, 89, 105) 100%);
+    line-height: 42px;
+    padding: 10px 20px; /* Ajusta el padding */
+    border: none;
+    position: relative; /* Importante: el botón es el contenedor relativo */
+    color: white; /* Asegúrate de que el texto sea visible */
+    overflow: hidden; /* Asegura que la animación no se desborde */
+}
+
+button:before,
+button:after {
+    position: absolute;
+    content: "";
+    background: rgb(78, 129, 157);
+    box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.2),
+    -3px -3px 6px 0 rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+}
+
+button:before {
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 0%;
+}
+
+button:after {
+    bottom: 0;
+    right: 0;
+    height: 2px;
+    width: 0%;
+}
+
+button:hover:before {
+    height: 100%;
+}
+
+button:hover:after {
+    width: 100%;
+}
+
+
+/* List Styles */
+ul {
+    list-style-type: none;
+    margin: 10px 0;
+    padding: 0;
+}
+
+#listaAmigos li,
+#resultado li {
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+#resultado {
+    text-align: center;
+    color: green;
+    font-weight: bold;
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.button-draw {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    width: auto;
+}
